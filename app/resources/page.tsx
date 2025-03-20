@@ -71,7 +71,7 @@ const therapists = [
     location: {
       latitude: 12.9716,
       longitude: 77.5946,
-      address: "456 Wellness Avenue, Indiranagar, Bangalore",
+      address: "46 Wellness Avenue, Indiranagar, Bangalore",
       distance: 3.1
     },
     insurance: ["Apollo Munich", "Max Bupa"],
@@ -97,7 +97,7 @@ const therapists = [
     location: {
       latitude: 19.0760,
       longitude: 72.8777,
-      address: "789 Campus Drive, Bandra West, Mumbai",
+      address: "79 Campus Drive, Bandra West, Mumbai",
       distance: 4.5
     },
     insurance: ["Star Health", "Reliance Health"],
@@ -151,7 +151,7 @@ const therapists = [
     location: {
       latitude: 18.5204,
       longitude: 73.8567,
-      address: "555 Wellness Way, Koregaon Park, Pune",
+      address: "55 Wellness Way, Koregaon Park, Pune",
       distance: 2.7
     },
     insurance: ["Bajaj Allianz Health Insurance"],
