@@ -27,171 +27,207 @@ import {
 } from "@/components/ui/alert-dialog"
 
 // Enhanced therapist data with more details
-const therapists = [
-  {
-    id: "1",
-    name: "Dr. Emily Johnson",
-    title: "Clinical Psychologist",
-    specialization: "Anxiety & Depression",
-    approach: "Cognitive Behavioral Therapy (CBT)",
-    experience: "12 years",
-    education: "Ph.D. in Clinical Psychology, Stanford University",
-    languages: ["English", "Spanish"],
-    acceptingNewPatients: true,
-    rating: 4.9,
-    reviews: 124,
-    image: "/placeholder.svg",
-    location: {
-      latitude: 40.7128,
-      longitude: -74.006,
-      address: "123 Therapy St, New York, NY",
-      distance: 2.3,
+  const therapists = [
+    {
+      id: "1",
+      name: "Dr. Priya Sharma",
+      title: "Clinical Psychologist",
+      specialization: "Anxiety & Depression",
+      approach: "Cognitive Behavioral Therapy (CBT)",
+      experience: "12 years",
+      education: "Ph.D. in Clinical Psychology, AIIMS Delhi",
+      languages: ["English", "Hindi"],
+      acceptingNewPatients: true,
+      rating: 4.9,
+      reviews: 124,
+      image: "/placeholder.svg",
+      location: {
+        latitude: 28.6139,
+        longitude: 77.2090,
+        address: "123 Therapy Street, Connaught Place, New Delhi",
+        distance: 2.3,
+      },
+      insurance: ["Star Health", "ICICI Lombard", "HDFC ERGO"],
+      nextAvailable: "Tomorrow",
+      sessionTypes: ["in-person", "video"],
+      price: 1200,
+      bio: "Dr. Sharma specializes in managing anxiety and depression through evidence-based CBT approaches. Her empathetic style creates a safe environment for exploring emotional challenges.",
+      areas: ["Anxiety", "Depression", "Stress Management", "Academic Pressure", "Life Transitions"],
+      availability: {
+        monday: ["9:00 AM", "10:00 AM", "2:00 PM", "3:00 PM"],
+        tuesday: ["10:00 AM", "11:00 AM", "1:00 PM", "4:00 PM"],
+        wednesday: ["9:00 AM", "11:00 AM", "2:00 PM", "3:00 PM"],
+        thursday: ["10:00 AM", "1:00 PM", "3:00 PM", "4:00 PM"],
+        friday: ["9:00 AM", "10:00 AM", "2:00 PM"],
+      },
     },
-    insurance: ["Blue Cross", "Aetna", "United Healthcare", "Medicare"],
-    nextAvailable: "Tomorrow",
-    sessionTypes: ["in-person", "video"],
-    price: 150,
-    bio: "Dr. Johnson specializes in helping students manage anxiety and depression through evidence-based approaches. Her warm and empathetic style creates a safe space for exploring challenges and developing effective coping strategies.",
-    areas: ["Anxiety", "Depression", "Stress Management", "Academic Pressure", "Life Transitions"],
-    availability: {
-      monday: ["9:00 AM", "10:00 AM", "2:00 PM", "3:00 PM"],
-      tuesday: ["10:00 AM", "11:00 AM", "1:00 PM", "4:00 PM"],
-      wednesday: ["9:00 AM", "11:00 AM", "2:00 PM", "3:00 PM"],
-      thursday: ["10:00 AM", "1:00 PM", "3:00 PM", "4:00 PM"],
-      friday: ["9:00 AM", "10:00 AM", "2:00 PM"],
+    {
+      id: "2",
+      name: "Dr. Arjun Mehta",
+      title: "Licensed Therapist",
+      specialization: "Stress Management",
+      approach: "Mindfulness-Based Stress Reduction (MBSR)",
+      experience: "8 years",
+      education: "Psy.D. in Clinical Psychology, NIMHANS Bangalore",
+      languages: ["English", "Kannada"],
+      acceptingNewPatients: true,
+      rating: 4.8,
+      reviews: 98,
+      image: "/placeholder.svg",
+      location: {
+        latitude: 12.9716,
+        longitude: 77.5946,
+        address: "456 Wellness Avenue, Indiranagar, Bangalore",
+        distance: 3.1,
+      },
+      insurance: ["Apollo Munich", "Max Bupa"],
+      nextAvailable: "Today",
+      sessionTypes: ["video"],
+      price: 1000,
+      bio:
+        "Dr. Mehta helps students develop practical stress management techniques through mindfulness practices, focusing on balancing academic achievement with mental well-being.",
+      areas:
+        ["Stress", "Anxiety", "Mindfulness", "Academic Performance", "Work-Life Balance"],
+      availability:
+        {
+          monday:
+            ["9:00 AM", "11:00 AM", "1:00 PM", "3:00 PM"],
+          tuesday:
+            ["10:00 AM", "12:00 PM", "2:00 PM", "4:00 PM"],
+          wednesday:
+            ["9:00 AM", "11:00 AM", "1:00 PM", "3:00 PM"],
+          thursday:
+            ["10:00 AM", "12:00 PM", "2:00 PM", "4:00 PM"],
+          friday:
+            ["9:00 AM", "11:00 AM", "1:00 PM"],
+        },
     },
+    {
+      id:
+        "3",
+      name:
+        "Dr. Anjali Gupta",
+      title:
+        "Counseling Psychologist",
+      specialization:
+        "Academic Pressure & Burnout",
+      approach:
+        "Solution-Focused Brief Therapy",
+      experience:
+        "15 years",
+      education:
+        'Ph.D. in Counseling Psychology, Tata Institute of Social Sciences (TISS), Mumbai',
+      languages:
+        ["English", 'Hindi', 'Marathi'],
+      acceptingNewPatients:
+        true,
+      rating:
+        4.7,
+      reviews:
+        156,
+      image:
+        "/placeholder.svg",
+      location:
+        {
+          latitude:
+            19.0760,
+          longitude:
+            72.8777,
+          address:
+            '789 Campus Drive, Bandra West, Mumbai',
+          distance:
+            4.5,
+        },
+      insurance:
+        ['Star Health', 'Reliance Health'],
+      nextAvailable:
+        'In 2 days',
+      sessionTypes:
+        ['in-person', 'video'],
+      price:
+        1100,
+      bio:
+        'Dr. Gupta specializes in helping students navigate academic pressure and burnout by developing sustainable study habits and self-care practices.',
+      areas:
+        ['Academic Stress', 'Burnout', 'Perfectionism', 'Time Management', 'Self-Care'],
+      
+  availability:{
+  monday:["10AM","11AM","2PM","4PM"],tuesday:["9AM","11AM","1PM","3PM"],wednesday:["10AM","12PM","2PM","4PM"],thursday:["9AM","11AM","1PM","3PM"],friday:["10AM","12PM","2PM"]},
   },
   {
-    id: "2",
-    name: "Dr. Michael Lee",
-    title: "Licensed Therapist",
-    specialization: "Stress Management",
-    approach: "Mindfulness-Based Stress Reduction (MBSR)",
-    experience: "8 years",
-    education: "Psy.D. in Clinical Psychology, UC Berkeley",
-    languages: ["English", "Mandarin"],
-    acceptingNewPatients: true,
-    rating: 4.8,
-    reviews: 98,
-    image: "/placeholder.svg",
-    location: {
-      latitude: 40.7328,
-      longitude: -74.026,
-      address: "456 Wellness Ave, New York, NY",
-      distance: 3.1,
-    },
-    insurance: ["Blue Cross", "Cigna", "Kaiser"],
-    nextAvailable: "Today",
-    sessionTypes: ["video"],
-    price: 130,
-    bio: "Dr. Lee helps students develop practical stress management techniques through mindfulness practices. He specializes in academic stress and performance anxiety, with a focus on balancing achievement with well-being.",
-    areas: ["Stress", "Anxiety", "Mindfulness", "Academic Performance", "Work-Life Balance"],
-    availability: {
-      monday: ["9:00 AM", "11:00 AM", "1:00 PM", "3:00 PM"],
-      tuesday: ["10:00 AM", "12:00 PM", "2:00 PM", "4:00 PM"],
-      wednesday: ["9:00 AM", "11:00 AM", "1:00 PM", "3:00 PM"],
-      thursday: ["10:00 AM", "12:00 PM", "2:00 PM", "4:00 PM"],
-      friday: ["9:00 AM", "11:00 AM", "1:00 PM"],
-    },
+  id:"4",
+  name:"Dr. Vikram Singh",
+  title:"Clinical Psychologist",
+  specialization:"Trauma & PTSD",
+  approach:"EMDR & Trauma-Focused CBT",
+  experience:"20 years",
+  education:"Ph.D., PGIMER Chandigarh",
+  languages:["English","Hindi","Punjabi"],
+  acceptingNewPatients:false,
+  rating:"4.9",
+  reviews:"210",
+  image:"/placeholder.svg",
+  
+  location:{
+  latitude:"30.7333",
+  longitude:"76.7794",
+  address:"321 Healing Boulevard, Sector-17, Chandigarh",
+  
+  distance:"1.8"},
+  insurance:["ICICI Lombard","Star Health"],
+  
+  nextAvailable:"In 3 weeks",
+  
+  sessionTypes:["in-person","video"],
+  
+  price:"1500",
+  
+  bio:"Dr Singh specializes in trauma treatment using EMDR and CBT techniques to help clients process traumatic experiences effectively.",
+  
+  areas:["Trauma","PTSD","Anxiety","Depression","Grief & Loss"],
+  
+  availability:{
+  monday:["9AM","10AM","2PM","3PM"],tuesday:["10AM","11AM","1PM","4PM"],wednesday:["9AM","11AM","2PM","3PM"],thursday:["10AM","1PM","3PM","4PM"],friday:["9AM","10AM","2PM"]},
   },
+  
   {
-    id: "3",
-    name: "Dr. Sarah Thompson",
-    title: "Counseling Psychologist",
-    specialization: "Academic Pressure & Burnout",
-    approach: "Solution-Focused Brief Therapy",
-    experience: "15 years",
-    education: "Ph.D. in Counseling Psychology, University of Michigan",
-    languages: ["English"],
-    acceptingNewPatients: true,
-    rating: 4.7,
-    reviews: 156,
-    image: "/placeholder.svg",
-    location: {
-      latitude: 40.7028,
-      longitude: -73.986,
-      address: "789 Campus Dr, Brooklyn, NY",
-      distance: 4.5,
-    },
-    insurance: ["Aetna", "United Healthcare", "Student Health Plan"],
-    nextAvailable: "In 2 days",
-    sessionTypes: ["in-person", "video"],
-    price: 140,
-    bio: "Dr. Thompson specializes in helping high-achieving students navigate academic pressure and prevent burnout. Her practical, solution-focused approach helps students develop sustainable study habits and self-care practices.",
-    areas: ["Academic Stress", "Burnout", "Perfectionism", "Time Management", "Self-Care"],
-    availability: {
-      monday: ["10:00 AM", "11:00 AM", "2:00 PM", "4:00 PM"],
-      tuesday: ["9:00 AM", "11:00 AM", "1:00 PM", "3:00 PM"],
-      wednesday: ["10:00 AM", "12:00 PM", "2:00 PM", "4:00 PM"],
-      thursday: ["9:00 AM", "11:00 AM", "1:00 PM", "3:00 PM"],
-      friday: ["10:00 AM", "12:00 PM", "2:00 PM"],
-    },
-  },
-  {
-    id: "4",
-    name: "Dr. James Wilson",
-    title: "Clinical Psychologist",
-    specialization: "Trauma & PTSD",
-    approach: "EMDR & Trauma-Focused CBT",
-    experience: "20 years",
-    education: "Ph.D. in Clinical Psychology, Columbia University",
-    languages: ["English", "French"],
-    acceptingNewPatients: false,
-    rating: 4.9,
-    reviews: 210,
-    image: "/placeholder.svg",
-    location: {
-      latitude: 40.7428,
-      longitude: -73.996,
-      address: "321 Healing Blvd, New York, NY",
-      distance: 1.8,
-    },
-    insurance: ["Blue Cross", "Aetna", "Cigna", "Medicare", "Medicaid"],
-    nextAvailable: "In 3 weeks",
-    sessionTypes: ["in-person", "video"],
-    price: 175,
-    bio: "Dr. Wilson is a trauma specialist with extensive experience treating PTSD and complex trauma. He uses evidence-based approaches including EMDR and trauma-focused CBT to help clients process traumatic experiences and develop resilience.",
-    areas: ["Trauma", "PTSD", "Anxiety", "Depression", "Grief & Loss"],
-    availability: {
-      monday: ["9:00 AM", "10:00 AM", "2:00 PM", "3:00 PM"],
-      tuesday: ["10:00 AM", "11:00 AM", "1:00 PM", "4:00 PM"],
-      wednesday: ["9:00 AM", "11:00 AM", "2:00 PM", "3:00 PM"],
-      thursday: ["10:00 AM", "1:00 PM", "3:00 PM", "4:00 PM"],
-      friday: ["9:00 AM", "10:00 AM", "2:00 PM"],
-    },
-  },
-  {
-    id: "5",
-    name: "Dr. Olivia Thompson",
-    title: "Licensed Psychologist",
-    specialization: "Eating Disorders",
-    approach: "Integrative & Health at Every Size",
-    experience: "10 years",
-    education: "Psy.D. in Clinical Psychology, NYU",
-    languages: ["English", "Spanish", "Portuguese"],
-    acceptingNewPatients: true,
-    rating: 4.8,
-    reviews: 87,
-    image: "/placeholder.svg",
-    location: {
-      latitude: 40.7228,
-      longitude: -74.016,
-      address: "555 Wellness Way, New York, NY",
-      distance: 2.7,
-    },
-    insurance: ["Blue Cross", "United Healthcare", "Aetna"],
-    nextAvailable: "In 1 week",
-    sessionTypes: ["in-person", "video"],
-    price: 160,
-    bio: "Dr. Rodriguez specializes in treating eating disorders and body image concerns using an integrative approach that emphasizes Health at Every Size principles. She creates a compassionate, non-judgmental space for healing.",
-    areas: ["Eating Disorders", "Body Image", "Self-Esteem", "Anxiety", "Depression"],
-    availability: {
-      monday: ["10:00 AM", "12:00 PM", "2:00 PM", "4:00 PM"],
-      tuesday: ["9:00 AM", "11:00 AM", "1:00 PM", "3:00 PM"],
-      wednesday: ["10:00 AM", "12:00 PM", "2:00 PM", "4:00 PM"],
-      thursday: ["9:00 AM", "11:00 AM", "1:00 PM", "3:00 PM"],
-      friday: ["10:00 AM", "12:00 PM", "2:00 PM"],
-    },
+  id:"5",
+  
+  name:"Dr Neha Kulkarni",
+  
+  title:"Licensed Psychologist",
+  
+  specialization:"Eating Disorders",
+  
+  approach:"Integrative & Health at Every Size",
+  
+  experience:"10 years",
+  
+  education:"Psy.D., SNDT University Mumbai",
+  
+  languages:["English","Hindi","Marathi"],
+  
+  acceptingNewPatients:true,
+  
+  rating:"4.8",
+  
+  reviews:"87",
+  
+  image:"/placeholder.svg",
+  
+  location:{
+  latitude:"18.5204",
+  longitude:"73.8567",
+  address:"555 Wellness Way, Koregaon Park, Pune",
+  distance:"2.7"},
+  insurance:["Bajaj Allianz Health Insurance"],
+  nextAvailable:"In 1 week",
+  sessionTypes:["in-person","video"],
+  price:"1300",
+  bio:"Dr Kulkarni treats eating disorders and body image concerns with compassion and a non-judgmental approach.",  
+  areas:["Eating Disorders","Body Image Issues"],
+  availability:{
+  monday:["10AM-12PM-2PM-4PM"],tuesday:["9AM-11AM-1PM-3PM"],wednesday:["10AM-12PM-2PM-4PM"],thursday:["9AM-11AM-1PM-3PM"],friday:["10AM-12PM-2PM"]},
   },
   {
     id: "6",

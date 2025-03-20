@@ -16,7 +16,7 @@ export default function MeditationPage() {
 
   // Video options
   const videoOptions = [
-    { value: "/meditation-video1.mp4", label: "Calm Ocean Waves" },
+    { value : "/sea1.mp4", label: "Calm Ocean Waves" },
     { value: "/meditation-video2.mp4", label: "Forest Ambience" },
     { value: "/meditation-video3.mp4", label: "Guided Breathing Exercise" },
     // Uncomment and adjust path to include your uploaded video:
