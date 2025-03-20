@@ -80,6 +80,11 @@ export function Nav() {
             </Link>
           </Button>
           <Button asChild variant="ghost">
+            <Link href="/meditation">
+              <Video className="w-4 h-4 mr-2" /> Meditation
+            </Link>
+          </Button>
+          <Button asChild variant="ghost">
             <Link href="/community">
               <Users className="w-4 h-4 mr-2" /> Community
             </Link>
