@@ -643,23 +643,59 @@ export default function VideoDiary() {
   };
 
   // Handle Submission of Entry
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (recordedVideo) {
       const insights = generateInsights();
 
-      const newEntry: DiaryEntry = {
-        id: crypto.randomUUID(),
-        type: "video",
-        content: recordedVideo,
-        mood: currentEmotion,
-        timestamp: new Date().toISOString(),
-        emotionData: emotionSummary,
-        insights,
-      };
+      try {
+        // Convert video URL to blob
+        const response = await fetch(recordedVideo);
+        const videoBlob = await response.blob();
 
-      setEntries((prev) => [...prev, newEntry]);
-      setCurrentEntry(newEntry);
-      setShowInsights(true);
+        // Create FormData to send to server
+        const formData = new FormData();
+        formData.append("video", videoBlob, "video_diary.mp4");
+        formData.append("title", new Date().toISOString());
+        formData.append("primary_mood", currentEmotion);
+        formData.append(
+          "mood_data",
+          JSON.stringify({
+            emotionSummary,
+            insights,
+          })
+        );
+
+        // Send to server API endpoint
+        const saveResponse = await fetch("/api/save-video", {
+          method: "POST",
+          body: formData,
+        });
+
+        const result = await saveResponse.json();
+
+        if (result.success) {
+          // Create entry for local state (as you're already doing)
+          const newEntry = {
+            id: result.id || crypto.randomUUID(),
+            type: "video",
+            content: recordedVideo,
+            mood: currentEmotion,
+            timestamp: new Date().toISOString(),
+            emotionData: emotionSummary,
+            insights,
+          };
+
+          setEntries((prev) => [...prev, newEntry]);
+          setCurrentEntry(newEntry);
+          setShowInsights(true);
+
+          console.log("Video saved to database successfully");
+        } else {
+          console.error("Failed to save video to database");
+        }
+      } catch (error) {
+        console.error("Error saving video:", error);
+      }
     }
   };
 

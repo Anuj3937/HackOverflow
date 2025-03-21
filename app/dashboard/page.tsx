@@ -39,6 +39,7 @@ import { Trophy, Pencil } from "lucide-react";
 import { AddGoalDialog } from "@/components/goals/add-goal-dialog";
 import { EditGoalDialog } from "@/components/goals/edit-goal-dialog";
 import { UpdateProgressDialog } from "@/components/goals/update-progress-dialog";
+import { VideoGallery } from "@/components/dashboard/VideoGallery";
 import { Rewards } from "@/components/gamification/rewards";
 
 // Sample upcoming appointments
@@ -268,6 +269,7 @@ export default function Dashboard() {
             <TabsTrigger value="mood">Mood</TabsTrigger>
             <TabsTrigger value="activities">Activities</TabsTrigger>
             <TabsTrigger value="overview">Overview</TabsTrigger>
+            <TabsTrigger value="videoDiary">Video Diary</TabsTrigger>
           </TabsList>
 
           <TabsContent value="overview" className="space-y-6">
@@ -296,6 +298,20 @@ export default function Dashboard() {
               </CardHeader>
               <CardContent>
                 <DailyTracker />
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          <TabsContent value="videoDiary" className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Video Diary Entries</CardTitle>
+                <CardDescription>
+                  Review your recorded mood entries and analysis
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <VideoGallery />
               </CardContent>
             </Card>
           </TabsContent>
