@@ -225,7 +225,7 @@ export default function Resources() {
   const [selectedSessionType, setSelectedSessionType] = useState<"in-person" | "video">("video")
   const [searchQuery, setSearchQuery] = useState("")
   const [specialization, setSpecialization] = useState<string>("")
-  const [priceRange, setPriceRange] = useState([0, 200])
+  const [priceRange, setPriceRange] = useState([0, 2000])
   const [showInsuranceOnly, setShowInsuranceOnly] = useState(false)
   const [selectedInsurance, setSelectedInsurance] = useState<string>("")
   const [distanceRange, setDistanceRange] = useState(10)
@@ -371,10 +371,10 @@ export default function Resources() {
                   <div className="space-y-2">
                     <Label>Price Range (per session)</Label>
                     <div className="pt-2">
-                      <Slider value={priceRange} min={50} max={300} step={10} onValueChange={setPriceRange} />
+                      <Slider value={priceRange} min={50} max={3000} step={10} onValueChange={setPriceRange} />
                       <div className="flex justify-between mt-2 text-sm">
-                        <span>${priceRange[0]}</span>
-                        <span>${priceRange[1]}</span>
+                        <span>Rs{priceRange[0]}</span>
+                        <span>Rs{priceRange[1]}</span>
                       </div>
                     </div>
                   </div>
@@ -407,7 +407,7 @@ export default function Resources() {
                   </div>
 
                   <div className="space-y-2">
-                    <Label>Distance (miles)</Label>
+                    <Label>Distance (km)</Label>
                     <div className="pt-2">
                       <Slider
                         value={[distanceRange]}
@@ -417,8 +417,8 @@ export default function Resources() {
                         onValueChange={(value) => setDistanceRange(value[0])}
                       />
                       <div className="flex justify-between mt-2 text-sm">
-                        <span>1 mile</span>
-                        <span>{distanceRange} miles</span>
+                        <span>1 km</span>
+                        <span>{distanceRange} km</span>
                       </div>
                     </div>
                   </div>

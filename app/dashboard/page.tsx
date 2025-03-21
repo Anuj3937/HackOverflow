@@ -45,7 +45,7 @@ import { Rewards } from "@/components/gamification/rewards";
 const upcomingAppointments = [
   {
     id: "1",
-    therapistName: "Dr. Emily Johnson",
+    therapistName: "Dr. K.P singh",
     therapistAvatar: "/placeholder.svg",
     date: format(addDays(new Date(), 2), "yyyy-MM-dd'T'HH:mm:ss"),
     type: "Individual Therapy",
@@ -53,7 +53,7 @@ const upcomingAppointments = [
   },
   {
     id: "2",
-    therapistName: "Dr. Michael Lee",
+    therapistName: "Dr. Ritika More",
     therapistAvatar: "/placeholder.svg",
     date: format(addDays(new Date(), 5), "yyyy-MM-dd'T'HH:mm:ss"),
     type: "Follow-up Session",
